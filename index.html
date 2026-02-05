@@ -7,19 +7,22 @@
 <title>Drew Newstrom | Musician & Audio Engineer</title>
 
 <!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@300;400;500&family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --cream:#EDE3D3;   /* warmer paper */
+  --cream:#EDE3D3;   /* warm paper */
   --sage:#7F8F7A;
   --olive:#5E6F5B;
   --brown:#6B4F3F;
   --dark:#2E2A27;
 }
 
-/* RESET */
+/* =====================
+   BASE
+===================== */
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:'Inter',sans-serif;
@@ -27,46 +30,48 @@ body{
   color:var(--dark);
 }
 
-/* PAPER GRAIN */
+/* subtle paper grain */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   background:url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity:.08;
+  opacity:.07;
   pointer-events:none;
 }
 
-/* -----------------------
-   HERO SPLIT LAYOUT
------------------------ */
+/* =====================
+   HERO SPLIT
+===================== */
 .hero{
   display:grid;
   grid-template-columns:1fr 1fr;
-  min-height:90vh;
+  min-height:92vh;
 }
 
-/* LEFT SIDE (photo + name) */
+/* LEFT SIDE (PHOTO + NAME) */
 .photo-hero{
   position:relative;
   background:
     linear-gradient(rgba(237,227,211,.88), rgba(237,227,211,.88)),
-    url("images/drew.jpg"); /* replace later */
+    url("images/drew.jpg"); /* drop your photo here later */
   background-size:cover;
   background-position:center;
 }
 
 .overlay{
-  padding:90px 60px;
   height:100%;
+  padding:90px 60px;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
 
-/* BIG NAME */
+/* NAME */
 h1{
-  font-family:'Fraunces',serif;
+  font-family:'Fraunces', serif;
+  font-weight:800;
   font-size:clamp(60px,10vw,130px);
   line-height:.9;
   margin:0;
@@ -89,9 +94,9 @@ h1{
   font-weight:600;
 }
 
-/* -----------------------
-   RIGHT SIDE RELEASE
------------------------ */
+/* =====================
+   RELEASE PANEL
+===================== */
 .release-full{
   background:var(--olive);
   color:white;
@@ -105,26 +110,28 @@ h1{
   text-align:center;
 }
 
-/* 70s TYPOGRAPHY GRAPHIC */
+/* THIS is the 70s poster-style type */
 .release-graphic{
-  font-family:'Luckiest Guy', cursive;
-  font-size: clamp(44px,4vw,70px);
+  font-family:'Fraunces', serif;
+  font-weight:800;
+
+  font-size:clamp(52px,4.5vw,82px);
   line-height:.9;
-  letter-spacing:2px;
+  letter-spacing:1px;
 
   color:var(--cream);
 
-  /* layered retro print effect */
+  /* layered retro screen-print look */
   text-shadow:
-    4px 4px 0 var(--brown),
-    8px 8px 0 var(--sage);
+    3px 3px 0 var(--brown),
+    6px 6px 0 var(--sage);
 
   margin-bottom:40px;
 }
 
 /* ALBUM ART */
 .album-art{
-  width:clamp(240px,60%,380px);
+  width:clamp(240px,60%,400px);
   aspect-ratio:1/1;
   object-fit:cover;
   border-radius:6px;
@@ -135,13 +142,15 @@ h1{
 .listen-btn{
   background:var(--dark);
   color:white;
+  padding:14px 30px;
   text-decoration:none;
-  padding:14px 28px;
   border-radius:6px;
   font-weight:600;
 }
 
-/* STRIPE */
+/* =====================
+   STRIPE DIVIDER
+===================== */
 .stripe{
   height:24px;
   background:linear-gradient(
@@ -154,20 +163,19 @@ h1{
   );
 }
 
-/* -----------------------
-   BANDS
------------------------ */
+/* =====================
+   CONTENT BANDS
+===================== */
 .band{
   padding:110px 28px;
   text-align:center;
 }
 
 .sage{background:var(--sage);color:white;}
-.olive{background:var(--olive);color:white;}
 .brown{background:var(--brown);color:white;}
 
 h2{
-  font-family:'Fraunces',serif;
+  font-family:'Fraunces', serif;
   font-size:38px;
   margin-bottom:30px;
 }
@@ -176,6 +184,7 @@ h2{
 .grid{
   max-width:1000px;
   margin:auto;
+
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:22px;
@@ -186,10 +195,11 @@ h2{
   background:rgba(255,255,255,.15);
   padding:26px;
   border-radius:6px;
-  font-weight:500;
 }
 
-/* MOBILE */
+/* =====================
+   MOBILE
+===================== */
 @media(max-width:900px){
   .hero{
     grid-template-columns:1fr;
@@ -203,7 +213,7 @@ h2{
 <!-- HERO -->
 <section class="hero">
 
-  <!-- LEFT: PHOTO + NAME -->
+  <!-- LEFT: YOU -->
   <div class="photo-hero">
     <div class="overlay">
       <h1>Drew<br>Newstrom</h1>
