@@ -1,68 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+<head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>Drew Newstrom | Musician & Audio Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@300;400;500&family=Luckiest+Guy&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --cream:#EDE3D3; /* warmer paper tone */
+  --cream:#EDE3D3;   /* warmer paper */
   --sage:#7F8F7A;
   --olive:#5E6F5B;
   --brown:#6B4F3F;
-  --dark:#2E2A27;/* PHOTO HERO */
+  --dark:#2E2A27;
+}
+
+/* RESET */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+}
+
+/* PAPER GRAIN */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity:.08;
+  pointer-events:none;
+}
+
+/* -----------------------
+   HERO SPLIT LAYOUT
+----------------------- */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:90vh;
+}
+
+/* LEFT SIDE (photo + name) */
 .photo-hero{
   position:relative;
   background:
-    linear-gradient(rgba(237,227,211,.85), rgba(237,227,211,.85)),
+    linear-gradient(rgba(237,227,211,.88), rgba(237,227,211,.88)),
     url("images/drew.jpg"); /* replace later */
   background-size:cover;
-  background-position:center;/* RETRO BADGE */
-.release-badge{
-  background:var(--cream);
-  color:var(--brown);
-
-  width:180px;
-  height:180px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  transform:rotate(45deg);
-  margin-bottom:40px;
-
-  box-shadow:6px 6px 0 rgba(0,0,0,.25);
-  border:4px solid var(--brown);
+  background-position:center;
 }
 
-/* text inside rotated square */
-.release-badge span{
-  transform:rotate(-45deg);
-
-  font-family:'Rye', serif;
-  font-size:18px;
-  letter-spacing:2px;
-  text-align:center;
-  line-height:1.2;
-}
- 
-}
-
-/* overlay content */
 .overlay{
-  padding:90px 50px;
+  padding:90px 60px;
   height:100%;
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
 
-/* FULL RELEASE SIDE */
+/* BIG NAME */
+h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(60px,10vw,130px);
+  line-height:.9;
+  margin:0;
+}
+
+.tag{
+  margin-top:18px;
+  opacity:.75;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:16px 32px;
+  background:var(--dark);
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  margin-top:26px;
+  font-weight:600;
+}
+
+/* -----------------------
+   RIGHT SIDE RELEASE
+----------------------- */
 .release-full{
   background:var(--olive);
   color:white;
@@ -76,105 +105,45 @@
   text-align:center;
 }
 
-/* title */
-.release-label{
-  font-family:'Fraunces',serif;
-  font-size:26px;
+/* 70s TYPOGRAPHY GRAPHIC */
+.release-graphic{
+  font-family:'Luckiest Guy', cursive;
+  font-size: clamp(44px,4vw,70px);
+  line-height:.9;
   letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:30px;
+
+  color:var(--cream);
+
+  /* layered retro print effect */
+  text-shadow:
+    4px 4px 0 var(--brown),
+    8px 8px 0 var(--sage);
+
+  margin-bottom:40px;
 }
 
-/* big square art */
-.album-art-large{
-  width:clamp(240px,60%,420px);
+/* ALBUM ART */
+.album-art{
+  width:clamp(240px,60%,380px);
   aspect-ratio:1/1;
   object-fit:cover;
-  margin-bottom:28px;
   border-radius:6px;
+  margin-bottom:26px;
 }
 
-/* button */
+/* SPOTIFY BUTTON */
 .listen-btn{
   background:var(--dark);
   color:white;
-  padding:16px 32px;
   text-decoration:none;
+  padding:14px 28px;
   border-radius:6px;
-  font-weight:600;
-}
-
-
-}
-
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:var(--cream);
-  color:var(--dark);
-}
-
-/* PAPER TEXTURE */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity:.08;
-  pointer-events:none;
-}
-
-/* HERO SPLIT */
-.hero{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:85vh;
-}
-
-.hero-left{
-  padding:90px 50px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.hero-right{
-  background:var(--olive);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* BIG TYPE */
-h1{
-  font-family:'Fraunces',serif;
-  font-size:clamp(60px,10vw,130px);
-  line-height:.9;
-  margin:0;
-}
-
-.tag{
-  margin-top:20px;
-  opacity:.75;
-}
-
-/* BUTTON */
-.btn{
-  display:inline-block;
-  padding:16px 34px;
-  background:var(--dark);
-  color:white;
-  text-decoration:none;
-  border-radius:6px;
-  margin-top:24px;
   font-weight:600;
 }
 
 /* STRIPE */
 .stripe{
-  height:26px;
+  height:24px;
   background:linear-gradient(
     90deg,
     var(--sage) 0%,
@@ -185,7 +154,9 @@ h1{
   );
 }
 
-/* BANDS */
+/* -----------------------
+   BANDS
+----------------------- */
 .band{
   padding:110px 28px;
   text-align:center;
@@ -219,7 +190,7 @@ h2{
 }
 
 /* MOBILE */
-@media(max-width:800px){
+@media(max-width:900px){
   .hero{
     grid-template-columns:1fr;
   }
@@ -233,7 +204,7 @@ h2{
 <section class="hero">
 
   <!-- LEFT: PHOTO + NAME -->
-  <div class="hero-left photo-hero">
+  <div class="photo-hero">
     <div class="overlay">
       <h1>Drew<br>Newstrom</h1>
       <p class="tag">Musician • Audio Engineer • Producer</p>
@@ -241,35 +212,29 @@ h2{
     </div>
   </div>
 
+  <!-- RIGHT: NEWEST RELEASE -->
+  <div class="release-full">
 
-  <!-- RIGHT: FULL RELEASE PANEL -->
-<div class="hero-right release-full">
+    <div class="release-graphic">
+      NEWEST<br>RELEASE
+    </div>
 
-  <div class="release-badge">
-  <span>NEWEST<br>RELEASE</span>
-</div>
+    <img
+      src="https://placehold.co/600x600?text=Album+Art"
+      class="album-art"
+    />
 
-
-  <img
-    src="https://placehold.co/420x420?text=Album+Art"
-    class="album-art-large"
-  />
-
-  <a
-    href="https://open.spotify.com"
-    target="_blank"
-    class="listen-btn"
-  >
-    Listen on Spotify
-  </a>
-
-</div>
-
+    <a
+      href="https://open.spotify.com"
+      target="_blank"
+      class="listen-btn"
+    >
+      Listen on Spotify
+    </a>
 
   </div>
 
 </section>
-
 
 <div class="stripe"></div>
 
@@ -284,14 +249,8 @@ h2{
   </div>
 </section>
 
-<!-- BEATS -->
-<section id="beats" class="band olive">
-  <h2>Beats</h2>
-  <p>Original beats with simple licensing and instant downloads</p>
-</section>
-
 <!-- CONTACT -->
-<section id="contact" class="band cream">
+<section id="contact" class="band">
   <h2>Contact</h2>
   <p>hello@drewnewstrommusic.com</p>
 </section>
