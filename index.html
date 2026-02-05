@@ -33,44 +33,48 @@
   justify-content:center;
 }
 
-/* RELEASE SIDE */
-.release{
+/* FULL RELEASE SIDE */
+.release-full{
   background:var(--olive);
+  color:white;
+
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
-}
 
-.release-card{
-  background:rgba(255,255,255,.12);
-  padding:40px;
-  border-radius:10px;
+  padding:60px 40px;
   text-align:center;
-  max-width:340px;
 }
 
-.release-title{
+/* title */
+.release-label{
   font-family:'Fraunces',serif;
-  font-size:22px;
-  margin-bottom:18px;
-  letter-spacing:1px;
+  font-size:26px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:30px;
 }
 
-.album-art{
-  width:100%;
+/* big square art */
+.album-art-large{
+  width:clamp(240px,60%,420px);
+  aspect-ratio:1/1;
+  object-fit:cover;
+  margin-bottom:28px;
   border-radius:6px;
-  margin-bottom:20px;
 }
 
+/* button */
 .listen-btn{
-  display:block;
   background:var(--dark);
   color:white;
+  padding:16px 32px;
   text-decoration:none;
-  padding:14px;
   border-radius:6px;
   font-weight:600;
 }
+
 
 }
 
