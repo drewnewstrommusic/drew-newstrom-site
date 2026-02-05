@@ -32,4 +32,163 @@ body::before{
   inset:0;
   background:
     url("https://grainy-gradients.vercel.app/noise.svg"),
-    radial-gradient(rgba(0,0,0,.05) 1px, transparent 1p
+    radial-gradient(rgba(0,0,0,.05) 1px, transparent 1px);
+  background-size:auto, 4px 4px;
+  opacity:.08;
+  pointer-events:none;
+}
+
+/* HERO SPLIT */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:80vh;
+}
+
+.hero-left{
+  background:var(--cream);
+  padding:80px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero-right{
+  background:var(--olive);
+}
+
+/* GIANT STACKED NAME */
+h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(60px,10vw,130px);
+  line-height:.9;
+  margin:0;
+}
+
+.tag{
+  margin-top:20px;
+  opacity:.7;
+}
+
+/* STRIPE DIVIDER */
+.stripe{
+  height:24px;
+  background:linear-gradient(
+    90deg,
+    var(--sage) 0%,
+    var(--sage) 33%,
+    var(--brown) 33%,
+    var(--brown) 66%,
+    var(--olive) 66%
+  );
+}
+
+/* BANDS */
+.band{
+  padding:110px 28px;
+  text-align:center;
+}
+
+.sage{background:var(--sage);color:white;}
+.olive{background:var(--olive);color:white;}
+.cream{background:var(--cream);}
+.brown{background:var(--brown);color:white;}
+
+h2{
+  font-family:'Fraunces',serif;
+  font-size:38px;
+  margin-bottom:30px;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  padding:16px 34px;
+  background:var(--dark);
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  margin:12px;
+  font-weight:600;
+}
+
+/* GRID */
+.grid{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+  text-align:left;
+}
+
+.card{
+  background:rgba(255,255,255,.15);
+  padding:26px;
+  border-radius:6px;
+  font-weight:500;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <h1>Drew<br>Newstrom</h1>
+    <p class="tag">Musician • Audio Engineer • Producer</p>
+
+    <div>
+      <a class="btn" href="#contact">Book Services</a>
+      <a class="btn" href="#beats">Browse Beats</a>
+    </div>
+  </div>
+  <div class="hero-right"></div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- SERVICES -->
+<section class="band sage">
+  <h2>Services</h2>
+
+  <div class="grid">
+    <div class="card">Recording & Mixing</div>
+    <div class="card">Session Guitar Work</div>
+    <div class="card">Live Performances</div>
+    <div class="card">Beat Production</div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section class="band cream">
+  <h2>Music</h2>
+  <p>Releases & collaborations coming soon</p>
+</section>
+
+<!-- BEATS -->
+<section id="beats" class="band olive">
+  <h2>Beats</h2>
+  <p>Original beats with simple licensing and instant downloads</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="band cream">
+  <h2>Contact</h2>
+  <p>hello@drewnewstrommusic.com</p>
+</section>
+
+<footer class="band brown">
+  © 2026 Drew Newstrom
+</footer>
+
+</body>
+</html>
