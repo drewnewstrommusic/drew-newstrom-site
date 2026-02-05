@@ -14,7 +14,64 @@
   --sage:#7F8F7A;
   --olive:#5E6F5B;
   --brown:#6B4F3F;
-  --dark:#2E2A27;
+  --dark:#2E2A27;/* PHOTO HERO */
+.photo-hero{
+  position:relative;
+  background:
+    linear-gradient(rgba(237,227,211,.85), rgba(237,227,211,.85)),
+    url("images/drew.jpg"); /* replace later */
+  background-size:cover;
+  background-position:center;
+}
+
+/* overlay content */
+.overlay{
+  padding:90px 50px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* RELEASE SIDE */
+.release{
+  background:var(--olive);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.release-card{
+  background:rgba(255,255,255,.12);
+  padding:40px;
+  border-radius:10px;
+  text-align:center;
+  max-width:340px;
+}
+
+.release-title{
+  font-family:'Fraunces',serif;
+  font-size:22px;
+  margin-bottom:18px;
+  letter-spacing:1px;
+}
+
+.album-art{
+  width:100%;
+  border-radius:6px;
+  margin-bottom:20px;
+}
+
+.listen-btn{
+  display:block;
+  background:var(--dark);
+  color:white;
+  text-decoration:none;
+  padding:14px;
+  border-radius:6px;
+  font-weight:600;
+}
+
 }
 
 *{box-sizing:border-box}
@@ -141,22 +198,39 @@ h2{
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <h1>Drew<br>Newstrom</h1>
-    <p class="tag">Musician • Audio Engineer • Producer</p>
-    <a class="btn" href="#contact">Book Services</a>
+
+  <!-- LEFT: PHOTO + NAME -->
+  <div class="hero-left photo-hero">
+    <div class="overlay">
+      <h1>Drew<br>Newstrom</h1>
+      <p class="tag">Musician • Audio Engineer • Producer</p>
+      <a class="btn" href="#contact">Book Services</a>
+    </div>
   </div>
 
-  <!-- ILLUSTRATED GUITAR -->
-  <div class="hero-right">
-    <svg width="240" height="500" viewBox="0 0 200 400" fill="none">
-      <rect x="90" y="0" width="20" height="260" fill="#EDE3D3"/>
-      <circle cx="100" cy="300" r="70" fill="#EDE3D3"/>
-      <circle cx="100" cy="300" r="40" fill="#5E6F5B"/>
-      <rect x="92" y="0" width="16" height="260" fill="#6B4F3F"/>
-    </svg>
+
+  <!-- RIGHT: NEWEST RELEASE -->
+  <div class="hero-right release">
+
+    <div class="release-card">
+      <h3 class="release-title">Newest Release</h3>
+
+      <!-- album art -->
+      <img src="https://placehold.co/320x320?text=Album+Art" class="album-art"/>
+
+      <a
+        href="https://open.spotify.com"
+        target="_blank"
+        class="listen-btn"
+      >
+        Listen on Spotify
+      </a>
+    </div>
+
   </div>
+
 </section>
+
 
 <div class="stripe"></div>
 
