@@ -6,7 +6,7 @@
 
 <title>Drew Newstrom | Musician & Audio Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -22,144 +22,14 @@
 body{
   margin:0;
   font-family:'Inter',sans-serif;
-  background:var(--cream);
   color:var(--dark);
 }
 
-/* PAPER GRAIN */
+/* PAPER + HALFTONE TEXTURE */
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity:.06;
-  pointer-events:none;
-}
-
-/* SECTIONS = BANDS */
-.band{
-  padding:120px 28px;
-  text-align:center;
-}
-
-.band-inner{
-  max-width:1000px;
-  margin:auto;
-}
-
-h1,h2{
-  font-family:'Fraunces',serif;
-  margin:0 0 20px 0;
-  letter-spacing:.5px;
-}
-
-h1{
-  font-size:clamp(60px,9vw,110px);
-}
-
-h2{
-  font-size:36px;
-}
-
-/* COLORS */
-.cream{ background:var(--cream); }
-.sage{ background:var(--sage); color:white; }
-.olive{ background:var(--olive); color:white; }
-.brown{ background:var(--brown); color:white; }
-
-/* retro buttons */
-.btn{
-  display:inline-block;
-  padding:16px 34px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:600;
-  margin:10px;
-  background:white;
-  color:var(--dark);
-}
-
-.btn-dark{
-  background:var(--dark);
-  color:white;
-}
-
-/* service grid */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  margin-top:40px;
-  text-align:left;
-}
-
-.card{
-  background:rgba(255,255,255,.15);
-  padding:22px;
-  border-radius:8px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="band cream">
-  <div class="band-inner">
-    <h1>Drew Newstrom</h1>
-    <p>Musician • Audio Engineer • Producer</p>
-
-    <p style="max-width:560px;margin:20px auto;opacity:.8">
-      Warm, analog-feeling recordings, session guitar, live sets,
-      and original beats crafted with intention.
-    </p>
-
-    <a class="btn btn-dark" href="#contact">Book Services</a>
-    <a class="btn" href="#beats">Browse Beats</a>
-  </div>
-</section>
-
-<!-- SERVICES BAND -->
-<section class="band sage">
-  <div class="band-inner">
-    <h2>Services</h2>
-
-    <div class="grid">
-      <div class="card">Recording & Mixing</div>
-      <div class="card">Session Guitar Work</div>
-      <div class="card">Live Performances</div>
-      <div class="card">Beat Production</div>
-    </div>
-  </div>
-</section>
-
-<!-- MUSIC -->
-<section class="band cream">
-  <div class="band-inner">
-    <h2>Music</h2>
-    <p>Releases & collaborations coming soon</p>
-  </div>
-</section>
-
-<!-- BEATS -->
-<section id="beats" class="band olive">
-  <div class="band-inner">
-    <h2>Beats</h2>
-    <p>Original beats with simple licensing and instant downloads</p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="band cream">
-  <div class="band-inner">
-    <h2>Contact</h2>
-    <p>hello@drewnewstrommusic.com</p>
-  </div>
-</section>
-
-<footer class="band brown" style="padding:50px 20px">
-  © 2026 Drew Newstrom
-</footer>
-
-</body>
-</html>
+  background:
+    url("https://grainy-gradients.vercel.app/noise.svg"),
+    radial-gradient(rgba(0,0,0,.05) 1px, transparent 1p
