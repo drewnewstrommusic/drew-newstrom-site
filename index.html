@@ -10,7 +10,7 @@
 
 <style>
 :root{
-  --cream:#F6F3EC;
+  --cream:#EDE3D3; /* warmer paper tone */
   --sage:#7F8F7A;
   --olive:#5E6F5B;
   --brown:#6B4F3F;
@@ -22,18 +22,16 @@
 body{
   margin:0;
   font-family:'Inter',sans-serif;
+  background:var(--cream);
   color:var(--dark);
 }
 
-/* PAPER + HALFTONE TEXTURE */
+/* PAPER TEXTURE */
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:
-    url("https://grainy-gradients.vercel.app/noise.svg"),
-    radial-gradient(rgba(0,0,0,.05) 1px, transparent 1px);
-  background-size:auto, 4px 4px;
+  background:url("https://grainy-gradients.vercel.app/noise.svg");
   opacity:.08;
   pointer-events:none;
 }
@@ -42,12 +40,11 @@ body::before{
 .hero{
   display:grid;
   grid-template-columns:1fr 1fr;
-  min-height:80vh;
+  min-height:85vh;
 }
 
 .hero-left{
-  background:var(--cream);
-  padding:80px 40px;
+  padding:90px 50px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -55,9 +52,12 @@ body::before{
 
 .hero-right{
   background:var(--olive);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-/* GIANT STACKED NAME */
+/* BIG TYPE */
 h1{
   font-family:'Fraunces',serif;
   font-size:clamp(60px,10vw,130px);
@@ -67,12 +67,24 @@ h1{
 
 .tag{
   margin-top:20px;
-  opacity:.7;
+  opacity:.75;
 }
 
-/* STRIPE DIVIDER */
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:16px 34px;
+  background:var(--dark);
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  margin-top:24px;
+  font-weight:600;
+}
+
+/* STRIPE */
 .stripe{
-  height:24px;
+  height:26px;
   background:linear-gradient(
     90deg,
     var(--sage) 0%,
@@ -91,25 +103,12 @@ h1{
 
 .sage{background:var(--sage);color:white;}
 .olive{background:var(--olive);color:white;}
-.cream{background:var(--cream);}
 .brown{background:var(--brown);color:white;}
 
 h2{
   font-family:'Fraunces',serif;
   font-size:38px;
   margin-bottom:30px;
-}
-
-/* BUTTONS */
-.btn{
-  display:inline-block;
-  padding:16px 34px;
-  background:var(--dark);
-  color:white;
-  text-decoration:none;
-  border-radius:6px;
-  margin:12px;
-  font-weight:600;
 }
 
 /* GRID */
@@ -145,13 +144,18 @@ h2{
   <div class="hero-left">
     <h1>Drew<br>Newstrom</h1>
     <p class="tag">Musician • Audio Engineer • Producer</p>
-
-    <div>
-      <a class="btn" href="#contact">Book Services</a>
-      <a class="btn" href="#beats">Browse Beats</a>
-    </div>
+    <a class="btn" href="#contact">Book Services</a>
   </div>
-  <div class="hero-right"></div>
+
+  <!-- ILLUSTRATED GUITAR -->
+  <div class="hero-right">
+    <svg width="240" height="500" viewBox="0 0 200 400" fill="none">
+      <rect x="90" y="0" width="20" height="260" fill="#EDE3D3"/>
+      <circle cx="100" cy="300" r="70" fill="#EDE3D3"/>
+      <circle cx="100" cy="300" r="40" fill="#5E6F5B"/>
+      <rect x="92" y="0" width="16" height="260" fill="#6B4F3F"/>
+    </svg>
+  </div>
 </section>
 
 <div class="stripe"></div>
@@ -159,19 +163,12 @@ h2{
 <!-- SERVICES -->
 <section class="band sage">
   <h2>Services</h2>
-
   <div class="grid">
     <div class="card">Recording & Mixing</div>
     <div class="card">Session Guitar Work</div>
     <div class="card">Live Performances</div>
     <div class="card">Beat Production</div>
   </div>
-</section>
-
-<!-- MUSIC -->
-<section class="band cream">
-  <h2>Music</h2>
-  <p>Releases & collaborations coming soon</p>
 </section>
 
 <!-- BEATS -->
@@ -187,7 +184,7 @@ h2{
 </section>
 
 <footer class="band brown">
-  © 2026 Drew Newstrom
+© 2026 Drew Newstrom
 </footer>
 
 </body>
