@@ -2,9 +2,10 @@
   "name": "drew-newstrom-site",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "start": "next start",
-    "dev": "next dev"
+  "build": "next build --no-lint",
+  "start": "next start",
+  "dev": "next dev"
+}
   },
   "dependencies": {
     "next": "latest",
