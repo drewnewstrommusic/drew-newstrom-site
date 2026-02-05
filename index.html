@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -21,7 +22,36 @@
     linear-gradient(rgba(237,227,211,.85), rgba(237,227,211,.85)),
     url("images/drew.jpg"); /* replace later */
   background-size:cover;
-  background-position:center;
+  background-position:center; /* RETRO BADGE */
+.release-badge{
+  background:var(--cream);
+  color:var(--brown);
+
+  width:180px;
+  height:180px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transform:rotate(45deg);
+  margin-bottom:40px;
+
+  box-shadow:6px 6px 0 rgba(0,0,0,.25);
+  border:4px solid var(--brown);
+}
+
+/* text inside rotated square */
+.release-badge span{
+  transform:rotate(-45deg);
+
+  font-family:'Rye', serif;
+  font-size:18px;
+  letter-spacing:2px;
+  text-align:center;
+  line-height:1.2;
+}
+ 
 }
 
 /* overlay content */
@@ -216,7 +246,10 @@ h2{
   <!-- RIGHT: FULL RELEASE PANEL -->
 <div class="hero-right release-full">
 
-  <h3 class="release-label">Newest Release</h3>
+  <div class="release-badge">
+  <span>NEWEST<br>RELEASE</span>
+</div>
+
 
   <img
     src="https://placehold.co/420x420?text=Album+Art"
