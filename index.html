@@ -26,9 +26,7 @@ body{
   color:var(--dark);
 }
 
-/* -----------------------
-   SWIRLY OLIVE TEXTURE
------------------------- */
+/* Swirly olive texture */
 .olive-texture{
   background:
     repeating-radial-gradient(
@@ -40,9 +38,7 @@ body{
     );
 }
 
-/* -----------------------
-   HERO SPLIT
------------------------- */
+/* HERO */
 .hero{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -78,7 +74,6 @@ h1{
   opacity:.75;
 }
 
-/* BUTTONS */
 .btn{
   display:inline-block;
   padding:16px 32px;
@@ -96,9 +91,7 @@ h1{
   border:2px solid var(--dark);
 }
 
-/* -----------------------
-   RELEASE PANEL
------------------------- */
+/* RELEASE PANEL */
 .release-full{
   color:white;
   display:flex;
@@ -154,9 +147,7 @@ h1{
   );
 }
 
-/* -----------------------
-   CONTENT SECTIONS
------------------------- */
+/* SECTIONS */
 .band{
   padding:110px 28px;
   text-align:center;
@@ -187,6 +178,33 @@ h2{
   background:rgba(0,0,0,.05);
   padding:26px;
   border-radius:6px;
+}
+
+/* CONTACT + MEDIA */
+.contact-email{
+  font-size:18px;
+  margin-bottom:30px;
+}
+
+.contact-email a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:24px;
+}
+
+.socials a{
+  color:white;
+  transition:transform .2s ease;
+}
+
+.socials a:hover{
+  transform:translateY(-4px);
 }
 
 /* MOBILE */
@@ -247,9 +265,41 @@ h2{
   </div>
 </section>
 
+<!-- CONTACT & MEDIA -->
 <section id="contact" class="band olive-texture" style="color:white;">
-  <h2>Contact</h2>
-  <p>drewnewstrommusic@gmail.com</p>
+  <h2>Contact & Media</h2>
+
+  <div class="contact-email">
+    <a href="mailto:drewnewstrommusic@gmail.com">
+      drewnewstrommusic@gmail.com
+    </a>
+  </div>
+
+  <div class="socials">
+
+    <!-- Instagram -->
+    <a href="https://instagram.com" target="_blank">
+      <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
+        <path d="M7 2C4 2 2 4 2 7v10c0 3 2 5 5 5h10c3 0 5-2 5-5V7c0-3-2-5-5-5H7zm5 6a5 5 0 110 10 5 5 0 010-10zm6.5-1a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+      </svg>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://facebook.com" target="_blank">
+      <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
+        <path d="M13 22v-9h3l1-4h-4V6c0-1 .3-2 2-2h2V0h-3c-4 0-6 2-6 6v3H5v4h3v9h5z"/>
+      </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://tiktok.com" target="_blank">
+      <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
+        <path d="M16 1c1 3 3 4 6 4v4c-2 0-4-1-6-2v7a7 7 0 11-7-7v4a3 3 0 103 3V1h4z"/>
+      </svg>
+    </a>
+
+  </div>
+
 </section>
 
 <footer class="band brown">
