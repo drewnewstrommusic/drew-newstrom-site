@@ -1,69 +1,273 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Drew Newstrom</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@800&display=swap" rel="stylesheet">
+<title>Drew Newstrom | Musician & Audio Engineer</title>
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin:0;
-  font-family: sans-serif;
-  background:#EDE3D3;
+:root{
+  --cream:#EDE3D3;   /* warm paper */
+  --sage:#7F8F7A;
+  --olive:#5E6F5B;
+  --brown:#6B4F3F;
+  --dark:#2E2A27;
 }
 
-.hero {
+/* =====================
+   BASE
+===================== */
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+}
+
+/* subtle paper grain */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity:.07;
+  pointer-events:none;
+}
+
+/* =====================
+   HERO SPLIT
+===================== */
+.hero{
   display:grid;
   grid-template-columns:1fr 1fr;
-  min-height:100vh;
+  min-height:92vh;
 }
 
-.left {
-  padding:80px;
+/* LEFT SIDE (PHOTO + NAME) */
+.photo-hero{
+  position:relative;
+  background:
+    linear-gradient(rgba(237,227,211,.88), rgba(237,227,211,.88)),
+    url("images/drew.jpg"); /* drop your photo here later */
+  background-size:cover;
+  background-position:center;
 }
 
-.right {
-  background:#5E6F5B;
-  color:white;
+.overlay{
+  height:100%;
+  padding:90px 60px;
+
   display:flex;
-  align-items:center;
-  justify-content:center;
   flex-direction:column;
+  justify-content:center;
 }
 
-h1 {
+/* NAME */
+h1{
   font-family:'Fraunces', serif;
   font-weight:800;
-  font-size:80px;
+  font-size:clamp(60px,10vw,130px);
+  line-height:.9;
   margin:0;
 }
 
-.release {
+.tag{
+  margin-top:18px;
+  opacity:.75;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:16px 32px;
+  background:var(--dark);
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  margin-top:26px;
+  font-weight:600;
+}
+
+/* =====================
+   RELEASE PANEL
+===================== */
+.release-full{
+  background:var(--olive);
+  color:white;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  padding:60px 40px;
+  text-align:center;
+}
+
+/* THIS is the 70s poster-style type */
+.release-graphic{
   font-family:'Fraunces', serif;
   font-weight:800;
-  font-size:60px;
+
+  font-size:clamp(52px,4.5vw,82px);
   line-height:.9;
+  letter-spacing:1px;
+
+  color:var(--cream);
+
+  /* layered retro screen-print look */
   text-shadow:
-    3px 3px 0 #6B4F3F,
-    6px 6px 0 #7F8F7A;
+    3px 3px 0 var(--brown),
+    6px 6px 0 var(--sage);
+
+  margin-bottom:40px;
+}
+
+/* ALBUM ART */
+.album-art{
+  width:clamp(240px,60%,400px);
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:6px;
+  margin-bottom:26px;
+}
+
+/* SPOTIFY BUTTON */
+.listen-btn{
+  background:var(--dark);
+  color:white;
+  padding:14px 30px;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+}
+
+/* =====================
+   STRIPE DIVIDER
+===================== */
+.stripe{
+  height:24px;
+  background:linear-gradient(
+    90deg,
+    var(--sage) 0%,
+    var(--sage) 33%,
+    var(--brown) 33%,
+    var(--brown) 66%,
+    var(--olive) 66%
+  );
+}
+
+/* =====================
+   CONTENT BANDS
+===================== */
+.band{
+  padding:110px 28px;
+  text-align:center;
+}
+
+.sage{background:var(--sage);color:white;}
+.brown{background:var(--brown);color:white;}
+
+h2{
+  font-family:'Fraunces', serif;
+  font-size:38px;
+  margin-bottom:30px;
+}
+
+/* GRID */
+.grid{
+  max-width:1000px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+  text-align:left;
+}
+
+.card{
+  background:rgba(255,255,255,.15);
+  padding:26px;
+  border-radius:6px;
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-  <div class="left">
-    <h1>Drew<br>Newstrom</h1>
-  </div>
+<!-- HERO -->
+<section class="hero">
 
-  <div class="right">
-    <div class="release">
-      NEWEST<br>RELEASE
+  <!-- LEFT: YOU -->
+  <div class="photo-hero">
+    <div class="overlay">
+      <h1>Drew<br>Newstrom</h1>
+      <p class="tag">Musician • Audio Engineer • Producer</p>
+      <a class="btn" href="#contact">Book Services</a>
     </div>
   </div>
-</div>
+
+  <!-- RIGHT: NEWEST RELEASE -->
+  <div class="release-full">
+
+    <div class="release-graphic">
+      NEWEST<br>RELEASE
+    </div>
+
+    <img
+      src="https://placehold.co/600x600?text=Album+Art"
+      class="album-art"
+    />
+
+    <a
+      href="https://open.spotify.com"
+      target="_blank"
+      class="listen-btn"
+    >
+      Listen on Spotify
+    </a>
+
+  </div>
+
+</section>
+
+<div class="stripe"></div>
+
+<!-- SERVICES -->
+<section class="band sage">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card">Recording & Mixing</div>
+    <div class="card">Session Guitar Work</div>
+    <div class="card">Live Performances</div>
+    <div class="card">Beat Production</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="band">
+  <h2>Contact</h2>
+  <p>hello@drewnewstrommusic.com</p>
+</section>
+
+<footer class="band brown">
+© 2026 Drew Newstrom
+</footer>
 
 </body>
 </html>
