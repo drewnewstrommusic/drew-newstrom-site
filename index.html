@@ -9,8 +9,8 @@
 
 <style>
 :root{
-  --cream:#EDE3D3;   /* warm paper */
-  --cream-dark:#E2D6C4; /* slightly darker tone */
+  --cream:#EDE3D3;
+  --cream-line:#E6DAC9;
   --sage:#7F8F7A;
   --olive:#5E6F5B;
   --brown:#6B4F3F;
@@ -22,19 +22,33 @@
 body{
   margin:0;
   font-family:'Inter',sans-serif;
-  background:var(--cream);
   color:var(--dark);
-  position:relative;
+
+  /* subtle tonal contour texture */
+  background:
+    repeating-radial-gradient(
+      circle at 20% 30%,
+      var(--cream) 0px,
+      var(--cream) 20px,
+      var(--cream-line) 21px,
+      var(--cream) 40px
+    ),
+    var(--cream);
 }
 
-/* -------------------------
-   TONAL CONTOUR TEXTURE
--------------------------- */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
+/* subtle paper lift */
+.band,
+.photo-hero{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.5),
+    inset 0 -1px 0 rgba(0,0,0,.05);
+}
 
-  background:
-    repeating-linea
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:92vh;
+}
+
+.photo-hero{
