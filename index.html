@@ -28,11 +28,16 @@ body{
 
 /* Swirly Olive Texture */
 .olive-texture{
-  background-color: var(--olive);
-  background-image: url("swirl.svg");
-  background-size: cover;
-  background-repeat: repeat;
+  background:
+    repeating-radial-gradient(
+      circle at 30% 40%,
+      var(--olive) 0px,
+      var(--olive) 40px,
+      var(--olive-line) 42px,
+      var(--olive) 80px
+    );
 }
+
 
 /* HERO */
 .hero{
