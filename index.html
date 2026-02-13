@@ -26,7 +26,7 @@ body{
   color:var(--dark);
 }
 
-/* Swirly olive texture */
+/* Swirly Olive Texture */
 .olive-texture{
   background:
     repeating-radial-gradient(
@@ -109,11 +109,9 @@ h1{
   line-height:.9;
   letter-spacing:1px;
   color:var(--cream);
-
   text-shadow:
     3px 3px 0 var(--brown),
     6px 6px 0 var(--sage);
-
   margin-bottom:40px;
 }
 
@@ -157,7 +155,10 @@ h1{
   background:var(--cream);
 }
 
-.brown{background:var(--brown);color:white;}
+.brown{
+  background:var(--brown);
+  color:white;
+}
 
 h2{
   font-family:'Fraunces', serif;
@@ -180,18 +181,28 @@ h2{
   border-radius:6px;
 }
 
-/* CONTACT + MEDIA */
-.contact-email{
+/* CONTACT ROW */
+.contact-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
   font-size:18px;
   margin-bottom:30px;
 }
 
-.contact-email a{
+.contact-row a{
   color:white;
   text-decoration:none;
   font-weight:500;
 }
 
+.divider{
+  opacity:.6;
+  font-size:20px;
+}
+
+/* SOCIALS */
 .socials{
   display:flex;
   justify-content:center;
@@ -265,33 +276,35 @@ h2{
   </div>
 </section>
 
-<!-- CONTACT & MEDIA -->
 <section id="contact" class="band olive-texture" style="color:white;">
   <h2>Contact & Media</h2>
 
-  <div class="contact-email">
+  <div class="contact-row">
     <a href="mailto:drewnewstrommusic@gmail.com">
       drewnewstrommusic@gmail.com
+    </a>
+
+    <span class="divider">•</span>
+
+    <a href="tel:7133020245">
+      713-302-0245
     </a>
   </div>
 
   <div class="socials">
 
-    <!-- Instagram -->
     <a href="https://instagram.com" target="_blank">
       <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
         <path d="M7 2C4 2 2 4 2 7v10c0 3 2 5 5 5h10c3 0 5-2 5-5V7c0-3-2-5-5-5H7zm5 6a5 5 0 110 10 5 5 0 010-10zm6.5-1a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
       </svg>
     </a>
 
-    <!-- Facebook -->
     <a href="https://facebook.com" target="_blank">
       <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
         <path d="M13 22v-9h3l1-4h-4V6c0-1 .3-2 2-2h2V0h-3c-4 0-6 2-6 6v3H5v4h3v9h5z"/>
       </svg>
     </a>
 
-    <!-- TikTok -->
     <a href="https://tiktok.com" target="_blank">
       <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
         <path d="M16 1c1 3 3 4 6 4v4c-2 0-4-1-6-2v7a7 7 0 11-7-7v4a3 3 0 103 3V1h4z"/>
