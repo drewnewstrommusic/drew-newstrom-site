@@ -10,9 +10,9 @@
 <style>
 :root{
   --cream:#EDE3D3;
-  --cream-shade:#E8DDCD;
   --sage:#7F8F7A;
   --olive:#5E6F5B;
+  --olive-line:#556754; /* slightly darker olive */
   --brown:#6B4F3F;
   --dark:#2E2A27;
 }
@@ -27,17 +27,16 @@ body{
 }
 
 /* -----------------------
-   SUBTLE PAPER TEXTURE
-   (SAFE – no overlays)
+   SWIRLY 70s OLIVE TEXTURE
 ------------------------ */
-.paper-texture{
+.olive-texture{
   background:
-    repeating-linear-gradient(
-      45deg,
-      var(--cream),
-      var(--cream) 40px,
-      var(--cream-shade) 41px,
-      var(--cream) 80px
+    repeating-radial-gradient(
+      circle at 30% 40%,
+      var(--olive) 0px,
+      var(--olive) 35px,
+      var(--olive-line) 36px,
+      var(--olive) 70px
     );
 }
 
@@ -54,7 +53,7 @@ body{
 .photo-hero{
   background:
     linear-gradient(rgba(237,227,211,.88), rgba(237,227,211,.88)),
-    url("images/drew.jpg"); /* add your photo later */
+    url("images/drew.jpg");
   background-size:cover;
   background-position:center;
 }
@@ -95,7 +94,6 @@ h1{
    RELEASE PANEL
 ------------------------ */
 .release-full{
-  background:var(--olive);
   color:white;
   display:flex;
   flex-direction:column;
@@ -204,8 +202,8 @@ h2{
     </div>
   </div>
 
-  <!-- RIGHT: NEWEST RELEASE -->
-  <div class="release-full">
+  <!-- RIGHT: NEWEST RELEASE (TEXTURED OLIVE) -->
+  <div class="release-full olive-texture">
 
     <div class="release-graphic">
       NEWEST<br>RELEASE
@@ -230,8 +228,7 @@ h2{
 
 <div class="stripe"></div>
 
-<!-- SERVICES (textured paper) -->
-<section class="band paper-texture">
+<section class="band sage">
   <h2>Services</h2>
   <div class="grid">
     <div class="card">Recording & Mixing</div>
@@ -241,8 +238,8 @@ h2{
   </div>
 </section>
 
-<!-- CONTACT (textured paper) -->
-<section id="contact" class="band paper-texture">
+<!-- CONTACT (same olive + texture as release) -->
+<section id="contact" class="band olive-texture" style="color:white;">
   <h2>Contact</h2>
   <p>hello@drewnewstrommusic.com</p>
 </section>
