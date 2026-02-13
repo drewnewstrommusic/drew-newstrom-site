@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Drew Newstrom | Musician & Audio Engineer</title>
 
-<!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --cream:#EDE3D3;   /* warm paper */
+  --cream:#EDE3D3;
+  --cream-shade:#E8DDCD;
   --sage:#7F8F7A;
   --olive:#5E6F5B;
   --brown:#6B4F3F;
   --dark:#2E2A27;
 }
 
-/* =====================
-   BASE
-===================== */
 *{box-sizing:border-box}
 
 body{
@@ -30,45 +26,47 @@ body{
   color:var(--dark);
 }
 
-/* subtle paper grain */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity:.07;
-  pointer-events:none;
+/* -----------------------
+   SUBTLE PAPER TEXTURE
+   (SAFE – no overlays)
+------------------------ */
+.paper-texture{
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--cream),
+      var(--cream) 40px,
+      var(--cream-shade) 41px,
+      var(--cream) 80px
+    );
 }
 
-/* =====================
+/* -----------------------
    HERO SPLIT
-===================== */
+------------------------ */
 .hero{
   display:grid;
   grid-template-columns:1fr 1fr;
   min-height:92vh;
 }
 
-/* LEFT SIDE (PHOTO + NAME) */
+/* LEFT SIDE (photo placeholder) */
 .photo-hero{
-  position:relative;
   background:
     linear-gradient(rgba(237,227,211,.88), rgba(237,227,211,.88)),
-    url("images/drew.jpg"); /* drop your photo here later */
+    url("images/drew.jpg"); /* add your photo later */
   background-size:cover;
   background-position:center;
 }
 
 .overlay{
-  height:100%;
   padding:90px 60px;
-
   display:flex;
   flex-direction:column;
   justify-content:center;
+  height:100%;
 }
 
-/* NAME */
 h1{
   font-family:'Fraunces', serif;
   font-weight:800;
@@ -82,7 +80,6 @@ h1{
   opacity:.75;
 }
 
-/* BUTTON */
 .btn{
   display:inline-block;
   padding:16px 32px;
@@ -94,34 +91,28 @@ h1{
   font-weight:600;
 }
 
-/* =====================
+/* -----------------------
    RELEASE PANEL
-===================== */
+------------------------ */
 .release-full{
   background:var(--olive);
   color:white;
-
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-
   padding:60px 40px;
   text-align:center;
 }
 
-/* THIS is the 70s poster-style type */
 .release-graphic{
   font-family:'Fraunces', serif;
   font-weight:800;
-
   font-size:clamp(52px,4.5vw,82px);
   line-height:.9;
   letter-spacing:1px;
-
   color:var(--cream);
 
-  /* layered retro screen-print look */
   text-shadow:
     3px 3px 0 var(--brown),
     6px 6px 0 var(--sage);
@@ -129,7 +120,6 @@ h1{
   margin-bottom:40px;
 }
 
-/* ALBUM ART */
 .album-art{
   width:clamp(240px,60%,400px);
   aspect-ratio:1/1;
@@ -138,7 +128,6 @@ h1{
   margin-bottom:26px;
 }
 
-/* SPOTIFY BUTTON */
 .listen-btn{
   background:var(--dark);
   color:white;
@@ -148,9 +137,7 @@ h1{
   font-weight:600;
 }
 
-/* =====================
-   STRIPE DIVIDER
-===================== */
+/* STRIPE */
 .stripe{
   height:24px;
   background:linear-gradient(
@@ -163,9 +150,9 @@ h1{
   );
 }
 
-/* =====================
-   CONTENT BANDS
-===================== */
+/* -----------------------
+   CONTENT SECTIONS
+------------------------ */
 .band{
   padding:110px 28px;
   text-align:center;
@@ -180,11 +167,9 @@ h2{
   margin-bottom:30px;
 }
 
-/* GRID */
 .grid{
   max-width:1000px;
   margin:auto;
-
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:22px;
@@ -197,9 +182,7 @@ h2{
   border-radius:6px;
 }
 
-/* =====================
-   MOBILE
-===================== */
+/* MOBILE */
 @media(max-width:900px){
   .hero{
     grid-template-columns:1fr;
@@ -210,7 +193,6 @@ h2{
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
 
   <!-- LEFT: YOU -->
@@ -248,8 +230,8 @@ h2{
 
 <div class="stripe"></div>
 
-<!-- SERVICES -->
-<section class="band sage">
+<!-- SERVICES (textured paper) -->
+<section class="band paper-texture">
   <h2>Services</h2>
   <div class="grid">
     <div class="card">Recording & Mixing</div>
@@ -259,8 +241,8 @@ h2{
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="band">
+<!-- CONTACT (textured paper) -->
+<section id="contact" class="band paper-texture">
   <h2>Contact</h2>
   <p>hello@drewnewstrommusic.com</p>
 </section>
