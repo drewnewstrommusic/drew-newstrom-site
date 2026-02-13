@@ -1,54 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Drew Newstrom | Musician & Audio Engineer</title>
+<meta charset="UTF-8">
+<title>Drew Newstrom</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@800&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --cream:#EDE3D3;
-  --cream-line:#E6DAC9;
-  --sage:#7F8F7A;
-  --olive:#5E6F5B;
-  --brown:#6B4F3F;
-  --dark:#2E2A27;
-}
-
-*{box-sizing:border-box}
-
-body{
+body {
   margin:0;
-  font-family:'Inter',sans-serif;
-  color:var(--dark);
-
-  /* subtle tonal contour texture */
-  background:
-    repeating-radial-gradient(
-      circle at 20% 30%,
-      var(--cream) 0px,
-      var(--cream) 20px,
-      var(--cream-line) 21px,
-      var(--cream) 40px
-    ),
-    var(--cream);
+  font-family: sans-serif;
+  background:#EDE3D3;
 }
 
-/* subtle paper lift */
-.band,
-.photo-hero{
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.5),
-    inset 0 -1px 0 rgba(0,0,0,.05);
-}
-
-/* HERO */
-.hero{
+.hero {
   display:grid;
   grid-template-columns:1fr 1fr;
-  min-height:92vh;
+  min-height:100vh;
 }
 
-.photo-hero{
+.left {
+  padding:80px;
+}
+
+.right {
+  background:#5E6F5B;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+
+h1 {
+  font-family:'Fraunces', serif;
+  font-weight:800;
+  font-size:80px;
+  margin:0;
+}
+
+.release {
+  font-family:'Fraunces', serif;
+  font-weight:800;
+  font-size:60px;
+  line-height:.9;
+  text-shadow:
+    3px 3px 0 #6B4F3F,
+    6px 6px 0 #7F8F7A;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <div class="left">
+    <h1>Drew<br>Newstrom</h1>
+  </div>
+
+  <div class="right">
+    <div class="release">
+      NEWEST<br>RELEASE
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
