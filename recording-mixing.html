@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recording & Mixing | Drew Newstrom</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#EDE3D3;
+  --sage:#7F8F7A;
+  --olive:#5E6F5B;
+  --olive-line:#556754;
+  --brown:#6B4F3F;
+  --dark:#2E2A27;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+  line-height:1.6;
+}
+
+.olive-texture{
+  background:
+    repeating-radial-gradient(
+      circle at 30% 40%,
+      var(--olive) 0px,
+      var(--olive) 40px,
+      var(--olive-line) 42px,
+      var(--olive) 80px
+    );
+}
+
+.container{
+  width:min(1100px, calc(100% - 48px));
+  margin:0 auto;
+}
+
+h1,h2,h3{
+  font-family:'Fraunces',serif;
+  margin:0 0 18px 0;
+  line-height:1.05;
+}
+
+h1{
+  font-size:clamp(52px, 8vw, 104px);
+}
+
+h2{
+  font-size:clamp(30px, 4vw, 46px);
+}
+
+h3{
+  font-size:26px;
+}
+
+p{
+  margin:0 0 18px 0;
+}
+
+a{
+  color:inherit;
+}
+
+.topbar{
+  padding:24px 0;
+  border-bottom:1px solid rgba(46,42,39,.12);
+}
+
+.topbar-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+
+.brand{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:28px;
+  text-decoration:none;
+}
+
+.back-link{
+  text-decoration:none;
+  font-weight:600;
+}
+
+.hero{
+  padding:88px 0 72px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:28px;
+  align-items:stretch;
+}
+
+.hero-copy{
+  padding:18px 0;
+}
+
+.eyebrow{
+  font-size:14px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.7;
+  margin-bottom:18px;
+}
+
+.hero-panel{
+  border-radius:10px;
+  padding:32px;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:320px;
+}
+
+.hero-panel h3{
+  color:var(--cream);
+  text-shadow:
+    3px 3px 0 var(--brown),
+    6px 6px 0 var(--sage);
+  font-size:clamp(34px, 4vw, 56px);
+  margin-bottom:18px;
+}
+
+.button-row{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.btn-dark{
+  background:var(--dark);
+  color:white;
+}
+
+.btn-outline{
+  border:2px solid var(--dark);
+  color:var(--dark);
+  background:transparent;
+}
+
+.stripe{
+  height:24px;
+  background:linear-gradient(
+    90deg,
+    var(--sage) 0%,
+    var(--sage) 33%,
+    var(--brown) 33%,
+    var(--brown) 66%,
+    var(--olive) 66%
+  );
+}
+
+.section{
+  padding:88px 0;
+}
+
+.section-olive{
+  color:white;
+}
+
+.section-olive h2,
+.section-olive h3{
+  color:var(--cream);
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.card{
+  background:rgba(0,0,0,.05);
+  border-radius:10px;
+  padding:26px;
+}
+
+.section-olive .card{
+  background:rgba(255,255,255,.10);
+}
+
+.list{
+  padding-left:20px;
+  margin:0;
+}
+
+.list li{
+  margin-bottom:10px;
+}
+
+.cta-box{
+  border-radius:10px;
+  padding:30px;
+}
+
+.footer{
+  padding:34px 0;
+  background:var(--brown);
+  color:white;
+  margin-top:20px;
+}
+
+@media (max-width: 900px){
+  .hero-grid,
+  .grid-2{
+    grid-template-columns:1fr;
+  }
+
+  .topbar-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="index.html">Drew Newstrom</a>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">Service</div>
+      <h1>Recording & Mixing</h1>
+      <p>
+        Warm, intentional recording and mixing for artists who want their music
+        to feel human, balanced, and true to the song.
+      </p>
+      <p>
+        Whether you’re building out a single, polishing a demo, or finishing a release,
+        I focus on tone, feel, and clarity without over-processing the life out of it.
+      </p>
+
+      <div class="button-row">
+        <a class="btn btn-dark" href="mailto:drewnewstrommusic@gmail.com">Book This Service</a>
+        <a class="btn btn-outline" href="#what-you-get">What You Get</a>
+      </div>
+    </div>
+
+    <div class="hero-panel olive-texture">
+      <h3>Warm. Clear. Intentional.</h3>
+      <p>
+        Recording support, mixing, and song-focused production decisions that help
+        your track sound finished without losing its personality.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<section id="what-you-get" class="section">
+  <div class="container">
+    <h2>What You Get</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Recording</h3>
+        <p>
+          Help capturing strong performances with an ear toward feel, tone,
+          and arrangement.
+        </p>
+        <ul class="list">
+          <li>Guidance on takes and performance choices</li>
+          <li>Basic production feedback where helpful</li>
+          <li>Focus on getting a usable, musical result</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Mixing</h3>
+        <p>
+          A mix that serves the record instead of showing off plugins.
+        </p>
+        <ul class="list">
+          <li>Balance, EQ, compression, space, and tone shaping</li>
+          <li>Clarity without losing grit or character</li>
+          <li>Delivered with the song’s vibe as the priority</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-olive olive-texture">
+  <div class="container">
+    <h2>Who This Is For</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Artists & Songwriters</h3>
+        <p>
+          If you have a song that needs help getting from idea stage to
+          “this actually sounds finished,” this is for you.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Independent Releases</h3>
+        <p>
+          Great for singles, demos that need polishing, or projects that want
+          a more personal and musical touch.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Approach</h2>
+    <div class="grid-2">
+      <div>
+        <p>
+          I’m drawn to recordings that feel alive. That usually means keeping the
+          emotion in the track, making smart arrangement and tone decisions, and
+          avoiding the kind of overworking that can flatten a song.
+        </p>
+        <p>
+          My goal is not to force everything into the same polished template.
+          It’s to make your music sound like <em>you</em>, just stronger and more complete.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Good Fit If You Want</h3>
+        <ul class="list">
+          <li>A warm, musical mix</li>
+          <li>Honest feedback that helps the song</li>
+          <li>A collaborative but focused process</li>
+          <li>A finished result that still feels human</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-box olive-texture section-olive">
+      <h2>Ready to Work Together?</h2>
+      <p>
+        Reach out with a little info about your project, where the song is at,
+        and what kind of help you’re looking for.
+      </p>
+      <div class="button-row">
+        <a class="btn btn-dark" href="mailto:drewnewstrommusic@gmail.com">Email Drew</a>
+        <a class="btn btn-outline" style="color:white;border-color:white;" href="index.html#contact">Contact & Media</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    © 2026 Drew Newstrom
+  </div>
+</footer>
+
+</body>
+</html>
